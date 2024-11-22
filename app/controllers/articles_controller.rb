@@ -45,11 +45,11 @@ class ArticlesController < ApplicationController
   def destroy
     @article = Article.find(params[:id])
     @article.destroy
-    redirect_to articles_url, notice: "Article was successfully destroyed.", status: :see_other
+    redirect_to root_path, notice: "Article was successfully destroyed.", status: :see_other
   end
 
   private
-    
+
     # Only allow a list of trusted parameters through.
     def article_params
       params.require(:article).permit(:title, :body)
